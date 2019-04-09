@@ -1,77 +1,65 @@
-# JoomShopping-4-payment-extension
+# Joomla 3.5 & JoomShopping 4 payment extension
 Payment extension for Joomla 3.5 JoomShopping 4 / Модуль оплаты для Joomla 3.5 JoomShopping 
-
-## CS-Cart 4.9 payment extension
 
 ### Installation
 
 * Backup your webstore and database
-* Copy contents of UPLOAD directory to root directory of your website 
-* AssetPayments directory should be copied to app/addons directory
-* Open menu Add-ons -> Manage add-ons -> Browse all available add-ons
-* Find AssetPayments payments extension and press Install
-* Open menu Administration -> Payment methods
-* Press blue plus button to add new payment method
+* Open menu Components -> JoomShopping -> Installation & Update 
+* Press Choose file button and select assetpayments.zip file
+* Open menu Components -> JoomShopping -> Payment methods
+* Find installed AssetPayments extension
 * Configure the new module
 * General settings:
+  * Publication - On
+  * Code - assetpayments
   * Name - Pay by card Visa/Mastercard (AssetPayments)
-  * Processor - AssetPayments
-  * Template - none
-  * Payment category - Credit card
-  * User groups - All
-  * Description - Cloud-based online payment processing platform AssetPayments
-  * Status - Active
-  * Icon - choose local and set path to asset.png
+  * Alias - pm_assetpayments
+  * Script name - pm_assetpayments
+  * Price - 0.00
+  * Image URL - /components/com_jshopping/payments/pm_assetpayments/pay_logo/asset.png
+  * Type - Extended
+  * Show description in the order - off
+  * Show standard bank details - on
 * Configuration:
   * Merchant Id
   * Secret key
   * Template ID (default = 19)
-  * Press Create button
+  * Successful payment status
+  * Pending payment status
+  * Failed payment status
+  * Press Save & close button
   
 ### Notes
-Tested and developed with CS-Cart 4.9.3 Multivendor.
+Tested and developed with Joomla 3.5.4 and JoomShopping 4.18.2.
 
-By default the module uses P (processed) status to mark successful payment and O (open) status to mark failure. If you would like to use custom status you should: 
-* Add new status in Administration -> Order statuses -> Add status
-* Choose status name
-* Save status
-* Open it again
-* Look at the Status filed to find out the status letter (for example A)
-* Add this letter to the top of payment script (assetpayments.php)
-
-## Модуль оплаты CS-Cart 4.9
+## Модуль оплаты Joomla 3.5 & JoomShopping 4
 
 ### Установка
 
 * Сделайте резервную копию сайта и базы данных
-* Скопируйте содержимое директории UPLOAD в корень сайта по фтп
-* Откройте меню Add-ons -> Manage add-ons -> Browse all available add-ons
-* Найдите модуль AssetPayments payments и нажмите Install
-* Откройте меню Administration -> Payment methods
-* Нажмите синий плюс справа и добавьте новый метод оплаты 
-* Настройте новый модуль
+* Откройте раздел Компоненты -> JoomShopping -> Установка и обновление
+* Укажите путь к файлу assetpayments.zip и нажмите кнопку Установить
+* Откройте раздел Компоненты -> JoomShopping -> Платежные методы
+* Нажмите на созданный метод AssetPayments 
+* Настройте модуль
 * Основные настройки:
-  * Name - Оплатить картой Visa/Mastercard (AssetPayments)
-  * Processor - AssetPayments
-  * Template - none
-  * Payment category - Credit card
-  * User groups - All
-  * Description - Облачная платформа обработки онлайн платежей AssetPayments
-  * Status - Active
-  * Icon - выберить метод local и укажите путь к файлу asset.png
+  * Публикация -Вкл
+  * Код - assetpayments
+  * Название - Оплатить картой Visa/Mastercard (AssetPayments)
+  * Алиас - pm_assetpayments
+  * Имя скрипта - pm_assetpayments
+  * Цена - 0.00
+  * Изображение URL - /components/com_jshopping/payments/pm_assetpayments/pay_logo/asset.png
+  * Тип - Расширенный
+  * Показывать описание в заказе - Выкл
+  * Показать стандартные банковские данные в счете - Вкл
 * Конфигурация:
-  * Merchant Id
-  * Secret key
-  * Template ID (default = 19)
-  * Нажмите кнопку Создать
+  * Id мерчанта
+  * Секретный ключ
+  * ID шаблона (по-умолчанию = 19)
+  * Статус успешного платежа
+  * Статус прерванного платежа
+  * Статус НЕ успешного платежа
   
-### Notes
-Протестировано с CS-Cart 4.9.3 мультивендор.
-
-По умолчанию модуль использует букву P (processed) для отметки успешной оплаты и О (open) для не успешной. Если Вы хотите использовать свои статусы оплаты, Вам необходимо:
-* Добавить новый статус в меню Administration -> Order statuses -> Add status
-* Укажите название статуса
-* Нажмите кнопку Сохранить
-* Снова откройте созданный статус
-* Посмотрите какую букву выдала CMS для нового статуса в поле Status
-* Измените букву в верней части скрипта оплаты (assetpayments.php)
+### Заметки
+Протестировано с Joomla 3.5.4 и JoomShopping 4.18.2.
