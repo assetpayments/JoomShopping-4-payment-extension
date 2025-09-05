@@ -60,6 +60,18 @@ Tested and developed with Joomla 3.5.4 and JoomShopping 4.18.2.
   * Статус успешного платежа
   * Статус прерванного платежа
   * Статус НЕ успешного платежа
-  
+
+### PHP 7+ fix
+defined('_JEXEC') or die;
+
+$db = JFactory::getDbo();
+$query = $db->getQuery(true)
+    ->update($db->quoteName('#__jshopping_orders'))
+    ->set($db->quoteName('order_created') . ' = ' . $db->quote('1'))
+    ->set($db->quoteName('order_status') . ' = ' . $db->quote($pmconfigs['transaction_pending_status']))
+    ->where($db->quoteName('order_id') . ' = ' . $db->quote($order_id));
+
+$db->setQuery($query);
+$db->execute();
 ### Заметки
 Протестировано с Joomla 3.5.4 и JoomShopping 4.18.2.
